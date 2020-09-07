@@ -1,10 +1,13 @@
-const http = require('http');
+let app = require('express')();
 
-const server = http.createServer((req, res)=>{
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World');
+
+app.get("",(req, res)=>{
+    res.send('Hello World')
+});
+
+app.listen(8080, ()=>{
+    console.log('hey server started');
 })
 
 
-server.listen(8080);
+
