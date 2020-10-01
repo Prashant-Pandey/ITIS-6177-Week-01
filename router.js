@@ -15,6 +15,11 @@ routes.get('/', (req, res)=>{
                 arg: 'none',
                 description:'get the details of a specific company'
             },{
+                url:'/api/v1/companys?searchTerm=search_term',
+                method:'GET',
+                arg: 'none',
+                description:'search from all the companies'
+            },{
                 url:'/api/v1/companys',
                 method:'POST',
                 arg: {
@@ -35,7 +40,7 @@ routes.get('/', (req, res)=>{
                 url:'/api/v1/companys/company_id',
                 method:'DELETE',
                 arg: 'none',
-                description:'get the list of all companies'
+                description:'delete a company'
             }]
         }
     })

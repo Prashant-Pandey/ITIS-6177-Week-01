@@ -2,6 +2,7 @@ const express = require('express'),
     app = express();
 require('dotenv').config();
 const router = require('./router');
+app.use(require('cors')())
 const port = process.env.port || 3000;
 
 app.use(express.urlencoded({

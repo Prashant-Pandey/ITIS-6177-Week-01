@@ -52,7 +52,7 @@ exports.searchCompanys = async (params) => {
         conn = await pool.getConnection();
         const tmp = await conn.query(`select * from ${tableName}`);
         res = tmp.filter((val)=>{
-            return val.COMPANY_NAME.match(params.searchTerm)||val.COMPANY_CITY.match(params.searchTerm);
+            return val.COMPANY_NAME.toLowerCase().match(params.searchTerm.toLowerCase())||val.COMPANY_CITY.toLowerCase().match(params.searchTerm.toLowerCase());
         })
     } catch (err) {
         res = { error: err };
