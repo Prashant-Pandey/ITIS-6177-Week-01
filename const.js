@@ -1,3 +1,4 @@
+
 exports.connection_string = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -19,3 +20,11 @@ exports.response500 = (res, error) => {
         error
     });
 }
+
+exports.response = (res, status, type, message) => {
+    res.status(status);
+    const response = {}
+    response[type] = message
+    res.json(response);
+}
+

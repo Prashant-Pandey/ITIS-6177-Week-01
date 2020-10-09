@@ -3,7 +3,10 @@ const company = require('./companyRouter');
 
 routes.get('/', (req, res)=>{
     res.json({
-        'API Guide':{
+        'New API Guide':{
+            'swagger': '/api/v1/docs'
+        },
+        'Old API Guide':{
             'Company':[{
                 url:'/api/v1/companys',
                 method:'GET',
